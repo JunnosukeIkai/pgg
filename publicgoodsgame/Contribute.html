@@ -1,0 +1,20 @@
+{{ block title }}
+    意思決定
+{{ endblock }}
+
+
+{{ block content }}
+
+<p>
+    初期保有量が{{ C.ENDOWMENT }}、係数が{{ C.MULTIPLIER }}の
+    {{ C.PLAYERS_PER_GROUP }} 人公共財供給ゲームをします。
+</p>
+
+
+<p style="font-weight: bold;">貢献額を入力してください.</p>
+
+<input name = contribution >
+
+ {{ next_button }}
+
+{{ endblock }}

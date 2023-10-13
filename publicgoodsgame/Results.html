@@ -1,0 +1,24 @@
+{{ block title }}
+    結果
+{{ endblock }}
+
+{{ block content }}
+
+<p>
+    初期保有量 {{C.ENDOWMENT}} から
+    {{ player.contribution }} 投資しました.
+    あなたのグループの投資量の合計は {{ group.total_contribution }} で
+    投資量からのリターンは {{ group.individual_share }}でした.
+    したがって、あなたの利得は {{ player.payoff }} でした.
+ </p>
+    {{ next_button }}
+{{ endblock }}
+
+
+
+
+
+
+
+
+

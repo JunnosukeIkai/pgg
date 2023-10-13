@@ -1,0 +1,30 @@
+{{ block title }}
+    イントロダクション
+{{ endblock }}
+
+{{ block content }}
+<ul>
+    <li>
+        3人の参加者がいます。それぞれの参加者に{{ C.ENDOWMENT }}ポイントが与えられます。
+    </li>
+    <li>
+        3人で出資可能な共同プロジェクトがあります。参加者は、手持ちの{{ C.ENDOWMENT }}ポイントから、いくらを共同プロジェクトへ投資するのかを決めます。
+    </li>
+    <li>
+        投資額は、参加者がそれぞれ決定することができます。また、全く投資をしないこと（投資額 = 0 ポイント）もできます。
+    </li>
+        <li>
+        投資をしなかったポイントは、そのままあなたの手元に残ります。投資からもポイントが得られます。その値は、投資額の合計で決まります。
+        投資額の合計が X ポイントのとき、それぞれのメンバーが投資から得られるポイントは、<strong>X × {{ C.MULTIPLIER }}/{{ C.PLAYERS_PER_GROUP }} ポイント</strong>です。
+    </li>
+</ul>
+
+<div style="margin-left: 10%; width: 80%; background-color:#e6e6e6; margin-bottom:30px; padding:1em 10px 1em; text-align:center; border-radius: 5px;">
+    あなたの獲得ポイントは次の式で計算されます。
+    <p>{{ C.ENDOWMENT }} -（あなたの投資額）＋ (全員の投資額の合計)×{{ C.MULTIPLIER }} /{{ C.PLAYERS_PER_GROUP }}</p>
+</div>
+
+{{ next_button }}
+
+{{ endblock }}
+
