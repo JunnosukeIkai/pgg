@@ -1,12 +1,12 @@
 {{ block title }}
-    意思決定
+    {{player.round_number}}期目のゲーム
 {{ endblock }}
 
 
 {{ block content }}
 
 <p>
-    初期保有量が{{ prev_payoff }}、係数が{{ C.MULTIPLIER }}の
+    保有量が{{ prev_payoff }}、係数が{{ C.MULTIPLIER }}の
     {{ C.PLAYERS_PER_GROUP }} 人公共財供給ゲームをします。
 </p>
 

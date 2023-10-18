@@ -5,11 +5,11 @@
 {{ block content }}
 
 <p>
-    初期保有量 {{prev_payoff}} から
-    {{ player.contribution }} 投資しました.
-    あなたのグループの投資量の合計は {{ group.total_contribution }} で
-    投資量からのリターンは {{ group.individual_share }}でした.
-    したがって、あなたの利得は {{ player.payoff }} でした.
+    保有額 {{prev_payoff}} から
+    {{ player.contribution }} 貢献しました.
+    あなたのグループの貢献額の合計は {{ group.total_contribution }} で
+    貢献額からのリターンは {{ group.individual_share }}でした.
+    したがって、あなたの保有額は {{ player.payoff }} になりました.
  </p>
     {{ next_button }}
 {{ endblock }}

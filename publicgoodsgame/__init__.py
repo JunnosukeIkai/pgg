@@ -9,13 +9,17 @@ Your app description
 class C(BaseConstants):
     NAME_IN_URL = 'publicgoodsgame'
     PLAYERS_PER_GROUP = 3
-    NUM_ROUNDS = 3
+    NUM_ROUNDS = 10
     ENDOWMENT = 1000
     MULTIPLIER = 2
 
 
 class Subsession(BaseSubsession):
-    pass
+    def creating_session(subsession):
+        if subsession.round_number == 1:
+            subsession.group_randomly()
+        else:
+            subsession.group_like_round(1)
 
 
 class Group(BaseGroup):
@@ -46,7 +50,7 @@ def set_payoff(group):
     for player in players:
         if group.round_number == 1:
             player.payoff = C.ENDOWMENT - player.contribution + group.individual_share
-        elif group.round_number == 2:
+        elif group.round_number == 5:
             player.prev_payoff  =  player.in_round(player.round_number - 1).payoff
             player.payoff = (player.prev_payoff - player.contribution + group.individual_share)*0.4
             player.total_payoff = player.prev_payoff + player.payoff
@@ -91,7 +95,7 @@ class ResultsWaitPage(WaitPage):
 
 class Catastrophe(Page):
     def is_displayed(player: Player):
-        return player.round_number == 2  
+        return player.round_number == 5
 
 
 class Results(Page):
@@ -101,7 +105,7 @@ class Results(Page):
 
 class Results2(Page):
     def is_displayed(player: Player):
-        return (player.round_number != 1) & (player.round_number != 2)
+        return (player.round_number != 1) & (player.round_number != 5)
 
 
     @staticmethod 

@@ -1,17 +1,17 @@
 {{ block title }}
-    カタストロフ発生
+    カタストロフの発生
 {{ endblock }}
 
 {{ block content }}
 
-<font color="red"><strong>カタストロフによって今期のあなたの利得は0.4倍されます</strong></font>
+<font color="red"><strong>※カタストロフによって今期のあなたの利得が0.4倍されます</strong></font>
 
 <p>
-    初期保有量 {{ C.ENDOWMENT }} から
-    {{ player.contribution }} 投資しました.
-    あなたのグループの投資量の合計は {{ group.total_contribution }} で
+    保有量 {{ C.ENDOWMENT }} から
+    {{ player.contribution }} 貢献しました.
+    あなたのグループの貢献額の合計は {{ group.total_contribution }} で公共プロジェクトから
     投資量からのリターンは {{ group.individual_share }}でした.
-    しかしカタストロフの発生によって、あなたの利得は {{ player.payoff }} でした.
+    しかし、カタストロフの発生によってあなたの保有額は {{ player.payoff }} になりました.
  </p>
     {{ next_button }}
 {{ endblock }}
