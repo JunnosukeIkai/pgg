@@ -31,7 +31,7 @@ class Player(BasePlayer):
     quiz4 = models.BooleanField(label="このゲームは十期繰り返しで行われる")
 
 
-class TEST_1(Page):
+class Test_1(Page):
     form_model = 'player'
     form_fields = ['quiz1', 'quiz2', 'quiz3', 'quiz4']
 
@@ -52,6 +52,6 @@ class ResultsWaitPage(WaitPage):
     pass
 
 
-page_sequence = [TEST_1, Results, ResultsWaitPage]
+page_sequence = [Test_1, Results, ResultsWaitPage]
 
 
