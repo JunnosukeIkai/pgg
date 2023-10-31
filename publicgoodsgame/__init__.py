@@ -10,7 +10,7 @@ class C(BaseConstants):
     NAME_IN_URL = 'publicgoodsgame'
     PLAYERS_PER_GROUP = 4
     NUM_ROUNDS = 10
-    ENDOWMENT = 1000
+    ENDOWMENT = 500
     MULTIPLIER = 2
 
 
@@ -52,7 +52,7 @@ def set_payoff(group):
             player.payoff = C.ENDOWMENT - player.contribution + group.individual_share
         elif group.round_number == 5:
             player.prev_payoff  =  player.in_round(player.round_number - 1).payoff
-            player.payoff = (player.prev_payoff - player.contribution + group.individual_share)*0.4
+            player.payoff = (player.prev_payoff - player.contribution + group.individual_share)*0.3
             player.total_payoff = player.prev_payoff + player.payoff
         else:
             player.prev_payoff  =  player.in_round(player.round_number - 1).payoff

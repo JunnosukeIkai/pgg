@@ -4,14 +4,14 @@
 
 {{ block content }}
 
-<font color="red"><strong>※カタストロフによって今期のあなたの利得が0.4倍されます</strong></font>
+<font color="red"><strong>※カタストロフによって今期のあなたの保有ポイントが0.3倍されます</strong></font>
 
 <p>
-    保有量 {{ C.ENDOWMENT }} から
+    保有ポイント {{ C.ENDOWMENT }} から
     {{ player.contribution }} 貢献しました.
-    あなたのグループの貢献額の合計は {{ group.total_contribution }} で公共プロジェクトから
-    投資量からのリターンは {{ group.individual_share }}でした.
-    しかし、カタストロフの発生によってあなたの保有額は {{ player.payoff }} になりました.
+    あなたのグループの貢献ポイントの合計は {{ group.total_contribution }} で公共プロジェクトから
+    の獲得ポイントは {{ group.individual_share }}でした.
+    しかし、カタストロフの発生によってあなたの保有ポイントは {{ player.payoff }} になりました.
  </p>
     {{ next_button }}
 {{ endblock }}
