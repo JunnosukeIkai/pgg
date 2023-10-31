@@ -37,7 +37,7 @@ class Test_1(Page):
 
     @staticmethod
     def error_message(player: Player, values):
-        solutions = dict(quiz1=False, quiz2='600ポイント', quiz3='0.4', quiz4=True)
+        solutions = dict(quiz1=False, quiz2='600ポイント', quiz3='0.3', quiz4=True)
         errors = {f: 'Wrong' for f in solutions if values[f] != solutions[f]}
         if errors:
             return errors
