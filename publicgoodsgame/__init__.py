@@ -8,7 +8,7 @@ Your app description
 
 class C(BaseConstants):
     NAME_IN_URL = 'publicgoodsgame'
-    PLAYERS_PER_GROUP = 4
+    PLAYERS_PER_GROUP = 3
     NUM_ROUNDS = 10
     ENDOWMENT = 500
     MULTIPLIER = 2
@@ -123,4 +123,3 @@ page_sequence = [Instraction,
                   Catastrophe,
                   Results,
                   Results2]
-
