@@ -8,10 +8,10 @@ Your app description
 
 class C(BaseConstants):
     NAME_IN_URL = 'publicgoodsgame'
-    PLAYERS_PER_GROUP = 2
+    PLAYERS_PER_GROUP = 4
     NUM_ROUNDS = 10
     ENDOWMENT = 500
-    MULTIPLIER = 2
+    MULTIPLIER = 4
 
 
 class Subsession(BaseSubsession):
