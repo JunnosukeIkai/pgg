@@ -28,7 +28,7 @@ class Player(BasePlayer):
         label='カタストロフが発生した期の終わりに各プレイヤーの利得がーー倍される',
         choices=['0.2', '0.3', '0.5'],
     )
-    quiz4 = models.BooleanField(label="このゲームは十期繰り返しで行われる")
+    quiz4 = models.BooleanField(label="このゲームは10期繰り返しで行われる")
 
 
 class Test_1(Page):

@@ -11,7 +11,7 @@ class C(BaseConstants):
     PLAYERS_PER_GROUP = 4
     NUM_ROUNDS = 10
     ENDOWMENT = 500
-    MULTIPLIER = 4
+    MULTIPLIER = 2
 
 
 class Subsession(BaseSubsession):
