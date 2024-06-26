@@ -21,7 +21,7 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     quiz1 = models.BooleanField(label="公共財に貢献された総ポイントが0.2倍されたものが各プレイヤーに還元される")
     quiz2 = models.StringField(
-        label='N期目開始時に500ポイント保有しており、自身のその期における貢献額を400ポイントとした。公共財に1000ポイント集まった場合、その期の利得は',
+        label='N期目開始時に500ポイント保有しており、自身の貢献額を400ポイントとした。公共財に1000ポイント集まった場合、利得は',
         choices=['400ポイント', '500ポイント', '600ポイント'],
     )
     quiz3 =models.StringField(
