@@ -25,7 +25,7 @@ class Player(BasePlayer):
         choices=['400ポイント', '500ポイント', '600ポイント'],
     )
     quiz3 =models.StringField(
-        label='カタストロフが発生した期の終わりに各プレイヤーの利得がーー倍される',
+        label='カタストロフが発生した期の終わりに各プレイヤーの保有ポイントがーー倍される',
         choices=['0.2', '0.3', '0.5'],
     )
     quiz4 = models.BooleanField(label="このゲームは10期繰り返しで行われる")
