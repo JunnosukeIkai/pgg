@@ -31,8 +31,8 @@ class Group(BaseGroup):
 class Player(BasePlayer):
    contribution = models.IntegerField(min=0)
    prev_payoff = models.CurrencyField() 
-   total_payoff =models.CurrencyField()
-
+   total_payoff = models.CurrencyField()
+   payoff_pre = models.CurrencyField()
 
 def contribution_max(player):
     if player.round_number == 1:
@@ -52,6 +52,7 @@ def set_payoff(group):
             player.payoff = C.ENDOWMENT - player.contribution + group.individual_share
         elif group.round_number == 5:
             player.prev_payoff  =  player.in_round(player.round_number - 1).payoff
+            player.payoff_pre = (player.prev_payoff - player.contribution + group.individual_share)
             player.payoff = (player.prev_payoff - player.contribution + group.individual_share)*0.3
             player.total_payoff = player.prev_payoff + player.payoff
         else:
@@ -115,11 +116,28 @@ class Results2(Page):
         return rval
 
 
+class Results3(Page):
+    def is_displayed(player: Player):
+        return player.round_number == 5
+
+
+    @staticmethod 
+    def vars_for_template(player: Player): 
+        rval = {} 
+        rval['prev_payoff'] =  player.in_round(player.round_number - 1).payoff
+        return rval
+
+
+
+
+
+
 
 page_sequence = [Instraction, 
                   Contribute,
                   Contribute2,
                   ResultsWaitPage,
-                  Catastrophe,
                   Results,
-                  Results2]
+                  Results2,
+                  Results3,
+                  Catastrophe,]
