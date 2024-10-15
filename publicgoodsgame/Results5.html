@@ -9,8 +9,12 @@
     {{ player.contribution }}ポイント貢献しました.
     あなたのグループの貢献ポイントの合計は {{ group.total_contribution }}ポイントで
     公共プロジェクトから得たポイントは {{ group.individual_share }}ポイントでした.
-    したがって、あなたの獲得利得は {{ player.payoff }}になりました.
+    したがって、あなたの獲得利得 {{ player.payoff }}になりました.
  </p>
+<font color="red"><strong>5ラウンド合計の獲得利得は{{ player.total_payoff }}となりました.</strong></font>
+<p>
+    これでゲームを終了します.
+</p>
     {{ next_button }}
 {{ endblock }}
 
