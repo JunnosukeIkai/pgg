@@ -1,19 +1,29 @@
 {{ block title }}
-    {{player.round_number}}ラウンドのゲーム
+    ラウンド{{player.round_number}}のゲーム
 {{ endblock }}
 
 
 {{ block content }}
 
-<p>
-    初期保有ポイントが{{ C.ENDOWMENT }}の
-    {{ C.PLAYERS_PER_GROUP }} 人公共財供給ゲームをします。
-</p>
+<ul>
+    <li>
+        あなたの被験者IDは<strong>{{ player.participant.id_in_session }}</strong>です.
+    </li>
+    {{ if player.round_number == 1}}
+        <li>
+        初期保有ポイントが<strong>{{ C.ENDOWMENT }}</strong>のゲームを行います.
+        </li>
+    {{ else}}
+        <li>
+        保有ポイントが<strong>{{ prev_payoff }}</strong>のゲームを行います.
+        </li>
+    {{ endif }}
+</ul>
 
 
 <p style="font-weight: bold;">貢献ポイントを入力してください.</p>
 
-<input name = contribution >
+<input name = contribution>
 
  {{ next_button }}
 

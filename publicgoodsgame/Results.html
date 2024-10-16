@@ -1,16 +1,38 @@
 {{ block title }}
-    {{player.round_number}}ラウンドの結果
+    ラウンド{{player.round_number}}の結果
 {{ endblock }}
 
 {{ block content }}
 
-<p>
-    初期保有ポイント {{C.ENDOWMENT}} ポイントから共同プロジェクトに
-    {{ player.contribution }}ポイント貢献しました.
-    あなたのグループの貢献ポイントの合計は {{ group.total_contribution }}ポイントで
-    公共プロジェクトから得たポイントは {{ group.individual_share }}ポイントでした.
-    したがって、あなたの獲得利得は {{ player.payoff }}になりました.
- </p>
+<ul>
+    {{ if player.round_number == 1}}
+        <li>
+        あなたは初期保有ポイントである {{C.ENDOWMENT}} から共同プロジェクトに{{ player.contribution }}ポイント貢献しました.
+        </li>
+    {{ else }}
+        <li>
+        あなたは保有ポイントである {{ prev_payoff }} から共同プロジェクトに{{ player.contribution }}ポイント貢献しました.
+        </li>
+    {{ endif }}
+    <li>
+        あなたのグループの貢献ポイントの合計は<strong>{{ group.total_contribution }}ポイント</strong>です.
+    </li>
+    <li>
+        公共プロジェクトから得たポイントは<strong>{{ group.individual_share }}ポイント</strong>でした.
+    </li>
+    {{ if player.round_number == 5}}
+        <li>
+        したがって、あなたの保有ポイントは {{ player.payoff_pre }}になりました.
+        </li>
+    {{ else }}
+        <li>
+        したがって、あなたの保有ポイントは {{ player.payoff }}になりました.
+        </li>
+     {{ endif}}
+</ul>
+{{ if player.round_number == 10}}
+     <p><strong>これで、実験は終了です.最後にアンケートの回答をお願いします.</strong></p>
+{{ endif}}
     {{ next_button }}
 {{ endblock }}
 
