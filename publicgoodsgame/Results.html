@@ -26,12 +26,14 @@
         </li>
     {{ else }}
         <li>
-        したがって、あなたの保有ポイントは {{ player.payoff }}になりました.
+        したがって、あなたの保有ポイントは <strong>{{ player.payoff }}</strong>になりました.
         </li>
      {{ endif}}
 </ul>
 {{ if player.round_number == 10}}
-     <p><strong>これで、実験は終了です.最後にアンケートの回答をお願いします.</strong></p>
+     <p><strong>これで、実験は終了です.最後にアンケートの回答をお願いします.</strong><br/>
+        <a href="https://forms.gle/gCfEt3dkHTXNpjaU6">アンケートはこちら</a>
+    </p>
 {{ endif}}
     {{ next_button }}
 {{ endblock }}
