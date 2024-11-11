@@ -1,13 +1,11 @@
 {{ block title }}
-    ラウンド{{player.round_number}}のゲーム
+    {{player.round_number}}ラウンドのゲーム
 {{ endblock }}
 
 
 {{ block content }}
 
 <ul>
-    <li>
-        あなたの被験者IDは<strong>{{ player.participant.id_in_session }}</strong>です.
     </li>
     {{ if player.round_number == 1}}
         <li>

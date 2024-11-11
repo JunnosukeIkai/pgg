@@ -1,35 +1,9 @@
 {{ block title }}
-    イントロダクション
+    カタストロフゲーム
 {{ endblock }}
 
 {{ block content }}
-<ul>
-    <li>
-        4人1グループのゲームを行います。1ラウンド開始時にそれぞれの参加者に初期保有ポイントとして<strong>{{ C.ENDOWMENT }}</strong>ポイント与えられます.
-    </li>
-    <li>
-        グループ内で出資可能な共同プロジェクトがあり、参加者は、手持ちの保有ポイントである{{ C.ENDOWMENT }}ポイントから、いくらかを共同プロジェクトへ貢献するのかを決めます.
-    </li>
-    <li>
-        貢献ポイントは、参加者がそれぞれ任意に決めるができます。また、全く貢献をしないこと（貢献ポイント = 0 ポイント）もできます.
-    </li>
-    <li>
-        貢献をしなかったポイントは、そのままあなたの手元に残ります。参加者全員の貢献ポイントの総額によって各参加者の公共プロジェクトから得られるポイントが決まります.
-        貢献ポイントの合計が X ポイントのとき、<strong>X × {{ C.MULTIPLIER }}/{{ C.PLAYERS_PER_GROUP }} </strong>ポイントです.
-    </li>
-    <li>
-        なお、本実験は<strong>10ラウンド</strong>の繰り返しが行われます。なお、2ラウンド目以降は一つ前のラウンド末の保有ポイントがラウンド開始時の保有ポイントになります.
-    </li>
-
-
-
-</ul>
-
-<div style="margin-left: 10%; width: 80%; background-color:#e6e6e6; margin-bottom:30px; padding:1em 10px 1em; text-align:center; border-radius: 5px;">
-    Nラウンド末におけるあなたの保有ポイントは次の式で計算されます。
-    <p>(Nラウンド開始時の保有ポイント) -（あなたの貢献ポイント）＋ (全員の貢献ポイントの合計)×{{ C.MULTIPLIER }} /{{ C.PLAYERS_PER_GROUP }}</p>
-</div>
-
+<p>あなたの被験者IDは<strong>{{ player.participant.id_in_session }}</strong>です.</p>
 <p>次のページから実験が開始します.「次へ」ボタンを押してください.</p>
 
 

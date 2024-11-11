@@ -1,5 +1,5 @@
 {{ block title }}
-    ラウンド{{player.round_number}}の結果
+{{player.round_number}}ラウンドの結果
 {{ endblock }}
 
 {{ block content }}
@@ -7,22 +7,26 @@
 <ul>
     {{ if player.round_number == 1}}
         <li>
-        あなたは初期保有ポイントである {{C.ENDOWMENT}} から共同プロジェクトに{{ player.contribution }}ポイント貢献しました.
+        あなたは初期保有ポイントである {{C.ENDOWMENT}}ポイント から共同プロジェクトに{{ player.contribution }}ポイント貢献しました.
         </li>
     {{ else }}
         <li>
-        あなたは保有ポイントである {{ prev_payoff }} から共同プロジェクトに{{ player.contribution }}ポイント貢献しました.
+        あなたは保有ポイントである {{ prev_payoff }}ポイントから共同プロジェクトに{{ player.contribution }}ポイント貢献しました.
         </li>
     {{ endif }}
     <li>
         あなたのグループの貢献ポイントの合計は<strong>{{ group.total_contribution }}ポイント</strong>です.
     </li>
     <li>
-        公共プロジェクトから得たポイントは<strong>{{ group.individual_share }}ポイント</strong>でした.
+        共同プロジェクトから得たポイントは<strong>{{ group.individual_share }}ポイント</strong>でした.
     </li>
     {{ if player.round_number == 5}}
         <li>
-        したがって、あなたの保有ポイントは {{ player.payoff_pre }}になりました.
+        したがって、あなたの保有ポイントは<strong>{{ player.payoff_pre }}</strong>になりました.
+        </li>
+    {{ elif player.round_number == 10}}
+        <li>
+        <font color="red">あなたの最終保有ポイントは<strong>{{ player.payoff }}</strong>でした.</font>
         </li>
     {{ else }}
         <li>
@@ -30,11 +34,6 @@
         </li>
      {{ endif}}
 </ul>
-{{ if player.round_number == 10}}
-     <p><strong>これで、実験は終了です.最後にアンケートの回答をお願いします.</strong><br/>
-        <a href="https://forms.gle/gCfEt3dkHTXNpjaU6">アンケートはこちら</a>
-    </p>
-{{ endif}}
     {{ next_button }}
 {{ endblock }}
 

@@ -8,7 +8,7 @@ Your app description
 
 class C(BaseConstants):
     NAME_IN_URL = 'publicgoodsgame'
-    PLAYERS_PER_GROUP = 4
+    PLAYERS_PER_GROUP = 2
     NUM_ROUNDS = 10
     ENDOWMENT = 500
     MULTIPLIER = 2
@@ -98,9 +98,16 @@ class Results(Page):
             rval['prev_payoff'] =  player.in_round(player.round_number - 1).payoff
             return rval
 
+class Rink(Page):
+    def is_displayed(player: Player):
+        return player.round_number == 10
+    
+
+
 
 page_sequence = [Instraction, 
                   Contribute,
                   ResultsWaitPage,
                   Results,
-                Catastrophe,]
+                  Catastrophe,
+                  Rink]
