@@ -51,11 +51,6 @@ def set_payoff(group):
     for player in players:
         if group.round_number == 1:
             player.payoff = C.ENDOWMENT - player.contribution + group.individual_share
-        elif group.round_number == 5:
-            player.prev_payoff  =  player.in_round(player.round_number - 1).payoff
-            player.payoff_pre = (player.prev_payoff - player.contribution + group.individual_share)
-            player.payoff = (player.prev_payoff - player.contribution + group.individual_share)*0.3
-            player.total_payoff = player.prev_payoff + player.payoff
         else:
             player.prev_payoff  =  player.in_round(player.round_number - 1).payoff
             player.payoff = player.prev_payoff - player.contribution + group.individual_share
@@ -83,12 +78,6 @@ class Contribute(Page):
 class ResultsWaitPage(WaitPage):
     after_all_players_arrive = 'set_payoff'
 
-
-class Catastrophe(Page):
-    def is_displayed(player: Player):
-        return player.round_number == 5
-
-
 class Results(Page):
 
     @staticmethod 
@@ -109,5 +98,4 @@ page_sequence = [Instraction,
                   Contribute,
                   ResultsWaitPage,
                   Results,
-                  Catastrophe,
                   Rink]
